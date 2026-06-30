@@ -64,13 +64,55 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // If everything is valid
-            if (isValid) {
-                successDiv.textContent = '\u2728 Namaste! Your registration request has been submitted successfully. We will reach out to you soon!';
-                successDiv.style.display = 'block';
-                form.reset();
-            }
+    //         if (isValid) {
+    //             successDiv.textContent = '\u2728 Namaste! Your registration request has been submitted successfully. We will reach out to you soon!';
+    //             successDiv.style.display = 'block';
+    //             form.reset();
+    //         }
+
+           if (isValid) {
+        const formData = {
+            fullName: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            phoneNumber: phoneInput.value.trim(),
+            preferredBatch: batchSelect.options[batchSelect.selectedIndex].text,
+            message: document.getElementById('message').value.trim()
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbzDXwV9JJXa3GJIpoTKP3_Nbypt7xK4ogwI2m1mjBGnnZ8cmtiaZdDTiTmvRz_zgrNULw/exec", {
+            method: "POST",
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+
+            successDiv.textContent =
+            "✨ Namaste! Your registration request has been submitted successfully. We will reach out to you soon!";
+
+            successDiv.style.display = "block";
+
+            form.reset();
+
+        })
+        .catch(error => {
+
+            successDiv.textContent =
+            "❌ Something went wrong. Please try again.";
+
+            successDiv.style.display = "block";
+
+            console.error(error);
+
+        });
+
+    }
+
+
+
         });
     }
+
+ 
 
     // 3. Image Slider Logic
     const sliders = document.querySelectorAll('.slider');
