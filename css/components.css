@@ -23,26 +23,50 @@
     align-items: center;
 }
 
-.logo-brand {
+/* .logo-brand {
     display: flex;
     align-items: center;
     white-space: nowrap;
     text-decoration: none;
+} */
+
+.logo-brand {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    text-decoration: none;
+    white-space: nowrap;
 }
 
-.nav-logo {
+/* .nav-logo {
     height: 60px;
     width: 60px;
     object-fit: contain;
     border-radius: 50%;
+} */
+
+.nav-logo {
+    width: clamp(50px, 8vw, 70px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
 }
 
-.brand-text {
+/* .brand-text {
     font-family: var(--font-heading);
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--color-green);
     margin-left: 0.75rem;
+    line-height: 1;
+} */
+
+.brand-text {
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: var(--color-green);
     line-height: 1;
 }
 
@@ -669,13 +693,24 @@
 }
 
 /* 6. Footer Layout */
-.footer {
+/* .footer {
     background-color: #1b4332;
     color: #ffffff;
     text-align: center;
     padding: 4rem 2rem;
     font-family: 'Inter', sans-serif;
+} */
+ 
+.footer {
+    background-color: #1b4332;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2.5rem 1rem;
 }
+
 
 .footer-tagline {
     font-family: 'Playfair Display', serif;
@@ -732,10 +767,19 @@
         text-align: center;
     }
 
-    .founder-img {
+    /* .founder-img {
         width: 220px;
         height: 220px;
+    } */
+
+    .founder-image img {
+    width: min(100%, 320px);
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
     }
+
 
     .founder-highlights {
         justify-content: center;
@@ -822,4 +866,22 @@
     .highlight-title {
         font-size: 1.2rem;
     }
+
+    .insta-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background-color: #E1306C;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    }
+
+    .insta-btn:hover {
+    background-color: #c7245a;
+    }
 }
+
+    
