@@ -93,7 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             form.reset();
 
+            //ADD THIS: Automatically hide the message after 5 seconds
+            setTimeout(() => {
+              successDiv.style.display = "none";
+            }, 5000); // 5000 milliseconds = 5 seconds
+           
         })
+
+        
         .catch(error => {
 
             successDiv.textContent =

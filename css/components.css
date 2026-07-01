@@ -1,6 +1,18 @@
 /* ==========================================
-   VAISHVA YOG — PREMIUM COMPONENT STYLES
+   VAISHVA YOG — CLEANED RESPONSIVE STYLES
    ========================================== */
+
+/* Global Layout Resets for Safety */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
 
 /* 1. Navigation Bar */
 .navbar {
@@ -17,70 +29,46 @@
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* .logo-brand {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    text-decoration: none;
-} */
-
 .logo-brand {
     display: flex;
     align-items: center;
-    gap: clamp(0.5rem, 2vw, 1rem);
+    gap: 10px;
     text-decoration: none;
     white-space: nowrap;
 }
 
-/* .nav-logo {
-    height: 60px;
-    width: 60px;
-    object-fit: contain;
-    border-radius: 50%;
-} */
-
 .nav-logo {
-    width: clamp(50px, 8vw, 70px);
+    width: clamp(45px, 8vw, 65px);
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: contain;
     display: block;
 }
 
-/* .brand-text {
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--color-green);
-    margin-left: 0.75rem;
-    line-height: 1;
-} */
-
 .brand-text {
-    font-family: var(--font-heading);
-    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-family: var(--font-heading), 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
     font-weight: 700;
-    color: var(--color-green);
+    color: var(--color-green), #1b4332;
     line-height: 1;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 0;
 }
 
 .nav-links a {
     font-family: 'Inter', sans-serif;
     text-decoration: none;
     color: #2d3748;
-    margin-left: 2rem;
+    margin-left: 1.75rem;
     font-weight: 500;
     font-size: 0.95rem;
     transition: color 0.3s ease;
@@ -110,82 +98,73 @@
     display: none;
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     cursor: pointer;
     color: #1b4332;
-    padding: 0.5rem;
+    padding: 0.25rem;
 }
 
 /* 2. Hero Section */
 .hero-section {
-    padding: 5rem 2rem 2rem 2rem;
-    background: linear-gradient(180deg, #f4f6f0 0%, #ffffff 100%);
-    min-height: 60vh;
+    background: linear-gradient(180deg, #bdbcb6, #ffffff);
     display: flex;
+    justify-content: center;
     align-items: center;
+    padding-top: clamp(120px, 15vw, 160px);
+    padding-bottom: clamp(30px, 5vw, 45px);
+    padding-inline: 1.25rem;
+    width: 100%;
 }
 
 .hero-container {
-    max-width: 1200px;
     margin: 0 auto;
+    max-width: 900px;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
+}
+
+.hero-content {
+    width: 100%;
+    text-align: center;
 }
 
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    color: #1b4332;
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.75rem, 5.5vw, 3.5rem);
     line-height: 1.2;
-    white-space: nowrap;
+    color: #1b4332;
+    margin-bottom: 20px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .hero-subheading {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.15rem;
-    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto 35px;
+    font-size: clamp(0.95rem, 3.5vw, 1.2rem);
+    line-height: 1.7;
     color: #4a5568;
-    margin-bottom: 2.5rem;
-    max-width: 500px;
+    padding-inline: 0.5rem;
 }
 
-.hero-image-wrapper {
-    display: flex;
+.btn-primary, .btn-submit {
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-}
-
-.hero-main-img {
-    max-width: 100%;
-    width: 280px;
-    height: 280px;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(27, 67, 50, 0.12);
-    object-fit: scale-down;
-    border: 2px solid #d4af37;
-    background-color: #ffffff;
-    padding: 0;
-}
-
-/* Premium Buttons */
-.btn-primary, .btn-submit {
-    display: inline-block;
     background-color: #1b4332;
     color: #ffffff;
-    padding: 0.85rem 2rem;
-    border-radius: 50px;
+    padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 36px);
+    border-radius: 999px;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    font-weight: 600;
+    letter-spacing: 0.3px;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(27, 67, 50, 0.15);
+    box-shadow: 0 4px 12px rgba(27, 67, 50, 0.18);
+    max-width: 100%;
 }
 
 .btn-primary:hover, .btn-submit:hover {
@@ -194,22 +173,24 @@
     box-shadow: 0 6px 15px rgba(212, 175, 55, 0.25);
 }
 
-/* 3. My Journey Section */
+/* 3. Journey Section Layout */
 .journey-section {
-    padding: 6rem 2rem;
+    padding: clamp(2rem, 8vw, 6rem) 1.25rem;
     background-color: #ffffff;
+    width: 100%;
 }
 
 .section-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 5vw, 2.4rem);
     color: #1b4332;
-    margin-bottom: 3rem;
+    margin-bottom: clamp(2.5rem, 6vw, 3.5rem);
     text-align: center;
     position: relative;
 }
@@ -225,79 +206,60 @@
     background-color: #d4af37;
 }
 
-.journey-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
-    line-height: 1.8;
-    font-size: 1.1rem;
+.journey-text-centered {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: justify;
+    line-height: 1.75;
+    font-size: clamp(0.95rem, 3.5vw, 1.05rem);
     color: #4a5568;
 }
 
-.journey-text p {
+.journey-text-centered p {
     margin-bottom: 1.5rem;
 }
 
-.journey-impact {
-    background-color: #fafdf7;
-    padding: 2.5rem;
-    border-radius: 16px;
-    border-left: 4px solid #1b4332;
-}
-
-.journey-impact h3 {
-    font-family: 'Playfair Display', serif;
-    color: #1b4332;
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-}
-
-.journey-impact ul {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-}
-
-.journey-impact li {
-    margin-bottom: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.quote {
+.journey-quote {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     color: #1b4332;
-    font-size: 1.2rem;
-    margin-top: 1.5rem;
+    font-size: clamp(1.05rem, 3.8vw, 1.25rem);
+    text-align: center;
     font-weight: 500;
+    line-height: 1.6;
+    margin-top: 2rem;
+    padding: 1.25rem;
+    background-color: rgba(196, 154, 69, 0.04);
+    border-radius: 8px;
+    border-left: 3px solid #d4af37;
 }
 
-/* 4. Classes Section */
+/* 4. Classes Section Layout */
 .classes-section {
-    padding: 6rem 2rem;
-    background-color: #fbfbf8;
+    padding: clamp(3.5rem, 8vw, 6rem) 1.25rem;
+    background-color: #1b4332;
+    width: 100%;
 }
 
 .section-subtitle {
     text-align: center;
     font-family: 'Inter', sans-serif;
     color: #718096;
-    margin-top: -2rem;
-    margin-bottom: 4rem;
-    font-size: 1.1rem;
+    margin-top: -1.75rem;
+    margin-bottom: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
 }
 
 .classes-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
 }
 
 .class-card {
     background: #ffffff;
-    padding: 2.5rem 2rem;
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
     border-radius: 12px;
     border: 1px solid rgba(212, 175, 55, 0.2);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
@@ -313,47 +275,49 @@
 
 .batch-badge {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 1rem;
+    right: 1rem;
     background-color: #f4f6f0;
     color: #1b4332;
-    padding: 0.25rem 0.75rem;
+    padding: 0.25rem 0.65rem;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
 }
 
 .class-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     color: #1b4332;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .time-slot {
     font-family: 'Inter', sans-serif;
     color: #d4af37;
     font-weight: 600;
-    margin-bottom: 1.2rem;
-    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
 }
 
 .class-card p:not(.time-slot) {
     font-family: 'Inter', sans-serif;
     color: #4a5568;
     line-height: 1.6;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
-/* 4b. Community Highlights Section */
+/* 4b. Community Highlights Section Layout */
 .community-section {
-    padding: 6rem 2rem;
+    padding: clamp(3.5rem, 8vw, 6rem) 1.25rem;
     background-color: #fbfbf8;
+    width: 100%;
 }
 
 .community-highlight {
-    margin-bottom: 4rem;
+    margin-bottom: clamp(3rem, 6vw, 4rem);
+    width: 100%;
 }
 
 .community-highlight:last-child {
@@ -362,20 +326,20 @@
 
 .highlight-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 4vw, 1.4rem);
     color: #1b4332;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     text-align: center;
 }
 
-/* Slider Styles */
 .slider {
     position: relative;
-    max-width: 700px;
+    max-width: 650px;
     margin: 0 auto;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    width: 100%;
 }
 
 .slider-track {
@@ -411,10 +375,10 @@
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.9);
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -430,17 +394,12 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.slider-prev {
-    left: 1rem;
-}
-
-.slider-next {
-    right: 1rem;
-}
+.slider-prev { left: 0.75rem; }
+.slider-next { right: 0.75rem; }
 
 .slider-dots {
     position: absolute;
-    bottom: 1rem;
+    bottom: 0.75rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -449,10 +408,10 @@
 }
 
 .slider-dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.5);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -463,30 +422,36 @@
     transform: scale(1.2);
 }
 
-/* 4c. Meet Our Founder Section */
+/* 4c. Meet Our Founder Section Layout */
 .founder-section {
-    padding: 6rem 2rem;
+    padding: clamp(3.5rem, 8vw, 6rem) 1.25rem;
     background-color: #ffffff;
+    width: 100%;
 }
 
 .founder-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: clamp(2rem, 5vw, 4rem);
     align-items: center;
+    width: 100%;
 }
 
 .founder-image-wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .founder-img {
-    width: 259px;
-    height: 382px;
+    width: min(100%, 260px);
+    height: auto;
+    aspect-ratio: 259 / 382;
+    display: block;
     border-radius: 16px;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
     border: 3px solid #d4af37;
     box-shadow: 0 12px 40px rgba(27, 67, 50, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -499,7 +464,7 @@
 
 .founder-info h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     color: #1b4332;
     margin-bottom: 0.5rem;
 }
@@ -508,34 +473,40 @@
     font-family: 'Inter', sans-serif;
     color: #d4af37;
     font-weight: 600;
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
 }
 
 .founder-info p {
     font-family: 'Inter', sans-serif;
     color: #4a5568;
-    line-height: 1.8;
+    line-height: 1.7;
     margin-bottom: 1rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    text-align: justify;
 }
 
 .founder-highlights {
     display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid #e2e8f0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #f0f0f0;
 }
 
 .founder-stat {
     text-align: center;
+    flex: 1 1 80px;
+    min-width: 80px;
 }
 
 .stat-number {
     display: block;
     font-family: 'Playfair Display', serif;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #1b4332;
 }
@@ -543,26 +514,140 @@
 .stat-label {
     display: block;
     font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #718096;
     margin-top: 0.25rem;
 }
 
-/* Journey text centered layout */
-.journey-text-centered {
-    max-width: 800px;
+/* 5. Registration Section & Form Layout */
+.join-section {
+    padding: clamp(3.5rem, 8vw, 6rem) 1.25rem;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.form-container {
+    max-width: 600px;
     margin: 0 auto;
+    width: 100%;
+}
+
+.form-intro {
     text-align: center;
-    line-height: 1.8;
-    font-size: 1.1rem;
     color: #4a5568;
+    margin-bottom: 2.5rem;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    font-size: clamp(0.9rem, 3vw, 1rem);
 }
 
-.journey-text-centered p {
+.form-group {
     margin-bottom: 1.5rem;
+    width: 100%;
 }
 
-/* Lightbox */
+.form-group label {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #2d3748;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #2d3748;
+    background-color: #fbfbfb;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #1b4332;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.08);
+}
+
+.error-message {
+    display: block;
+    color: #e53e3e;
+    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    margin-top: 0.3rem;
+    min-height: 1.2em;
+}
+
+.success-message {
+    display: none;
+    text-align: center;
+    color: #1b4332;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    background-color: #f0fff4;
+    border: 1px solid #c6f6d5;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.btn-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.9rem;
+    font-size: 1rem;
+}
+
+/* 6. Footer Layout */
+.footer {
+    background-color: #1b4332;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 3rem 1.25rem;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    color: #f4f6f0;
+}
+
+.footer p:nth-child(2) {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.insta-btn {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    margin-top: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.insta-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Lightbox Layout */
 .lightbox-overlay {
     display: none;
     position: fixed;
@@ -574,7 +659,7 @@
     z-index: 2000;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .lightbox-overlay.active {
@@ -582,17 +667,17 @@
 }
 
 .lightbox-overlay img {
-    max-width: 90%;
-    max-height: 85vh;
+    max-width: 95%;
+    max-height: 80vh;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 6px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
 }
 
 .lightbox-close {
     position: absolute;
-    top: 1.5rem;
-    right: 2rem;
+    top: 1rem;
+    right: 1.5rem;
     color: #ffffff;
     font-size: 2.5rem;
     cursor: pointer;
@@ -607,189 +692,12 @@
     opacity: 0.7;
 }
 
-/* 5. Registration Section & Form Elements */
-.join-section {
-    padding: 6rem 2rem;
-    background-color: #ffffff;
-}
+/* ==========================================
+   ⚡ MEDIA QUERIES BREAKPOINTS
+   ========================================== */
 
-.form-container {
-    max-width: 650px !important;
-    margin: 0 auto;
-}
-
-.form-intro {
-    text-align: center;
-    color: #4a5568;
-    margin-bottom: 3rem;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-}
-
-.form-group {
-    margin-bottom: 1.75rem;
-}
-
-.form-group label {
-    display: block;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    color: #2d3748;
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 0.85rem 1rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    color: #2d3748;
-    background-color: #fbfbfb;
-    transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #1b4332;
-    background-color: #ffffff;
-    box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.08);
-}
-
-.error-message {
-    display: block;
-    color: #e53e3e;
-    font-size: 0.85rem;
-    font-family: 'Inter', sans-serif;
-    margin-top: 0.35rem;
-    min-height: 1.2em;
-}
-
-.success-message {
-    display: none;
-    text-align: center;
-    color: #1b4332;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    padding: 1.25rem;
-    margin-top: 1.5rem;
-    background-color: #f0fff4;
-    border: 1px solid #c6f6d5;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
-.btn-submit {
-    width: 100%;
-    margin-top: 1rem;
-    padding: 1rem;
-    font-size: 1.05rem;
-}
-
-/* 6. Footer Layout */
-/* .footer {
-    background-color: #1b4332;
-    color: #ffffff;
-    text-align: center;
-    padding: 4rem 2rem;
-    font-family: 'Inter', sans-serif;
-} */
- 
-.footer {
-    background-color: #1b4332;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 2.5rem 1rem;
-}
-
-
-.footer-tagline {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-style: italic;
-    margin-bottom: 1rem;
-    color: #f4f6f0;
-}
-
-.footer p:last-child {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* ─── Responsive: Tablet (max-width: 968px) ─────────────────────────── */
+/* Tablet & Mobile Layout Changes (968px and down) */
 @media (max-width: 968px) {
-    .hero-container {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        text-align: center;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-        white-space: nowrap;
-    }
-
-    .hero-subheading {
-        margin-inline: auto;
-    }
-
-    .hero-image-wrapper {
-        order: -1;
-    }
-
-    .hero-main-img {
-        width: 220px;
-        height: 220px;
-    }
-
-    .journey-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-
-    .classes-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .founder-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        text-align: center;
-    }
-
-    /* .founder-img {
-        width: 220px;
-        height: 220px;
-    } */
-
-    .founder-image img {
-    width: min(100%, 320px);
-    height: auto;
-    display: block;
-    margin: auto;
-    border-radius: 20px;
-    }
-
-
-    .founder-highlights {
-        justify-content: center;
-    }
-
-    .slider {
-        max-width: 100%;
-    }
-
-    /* Mobile Navigation */
     .mobile-nav-toggle {
         display: block;
     }
@@ -802,7 +710,7 @@
         width: 100%;
         background: #ffffff;
         flex-direction: column;
-        padding: 1.5rem 2rem;
+        padding: 1rem 1.5rem;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         border-top: 1px solid #e2e8f0;
     }
@@ -816,72 +724,38 @@
         padding: 0.75rem 0;
         border-bottom: 1px solid #f0f0f0;
         width: 100%;
+        text-align: left;
     }
 
     .nav-links a:last-child {
         border-bottom: none;
     }
-}
 
-/* ─── Responsive: Small Mobile (max-width: 480px) ────────────────────── */
-@media (max-width: 480px) {
-    .hero-section {
-        padding: 6rem 1rem 3rem 1rem;
+    .founder-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    .hero-content h1 {
-        font-size: 2rem;
+    .founder-info {
+        text-align: center;
     }
 
-    .hero-main-img {
-        width: 220px;
-    }
-
-    .nav-container {
-        padding: 0 1rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .journey-section,
-    .classes-section,
-    .join-section,
-    .community-section,
-    .founder-section {
-        padding: 4rem 1rem;
-    }
-
-    .founder-img {
-        width: 180px;
-        height: 180px;
+    .founder-info p {
+        text-align: justify;
     }
 
     .founder-highlights {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .highlight-title {
-        font-size: 1.2rem;
-    }
-
-    .insta-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 16px;
-    background-color: #E1306C;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: 0.3s ease;
-    }
-
-    .insta-btn:hover {
-    background-color: #c7245a;
+        justify-content: center;
     }
 }
 
+/* Extra Tweaks for Small Screens (480px and down) */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
     
+    .journey-text-centered {
+        text-align: justify;
+    }
+}
